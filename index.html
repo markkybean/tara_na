@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Go</title>
+    <!-- <style>
+
+    </style> -->
+</head>
+<body>
+    <div class="container-fluid">
+        <section class="text-center mt-5" id="landing">
+            <h1>Mariel Bruha Ice Cream?</h1>
+        </section>
+            <button class="btn btn-success btn-lg nt-3" id="move-button">no</button>
+            <button class="btn btn-success btn-lg nt-3" id="yes-button">Yes</button>
+        <!-- <button class="btn btn-success btn-lg nt-3" id="move-button">no</button>
+        <button class="btn btn-success btn-lg nt-3" id="yes-button">Yes</button> -->
+
+    </div>
+    
+    <div id="result" style="text-align: center; display: none;">Yehey</div>
+
+    
+
+    <div id="display-container">
+        <img id="display-image" src="https://scontent.fcrk1-5.fna.fbcdn.net/v/t1.15752-9/354470560_637480998445281_2263430180077248463_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGoNYSrfStKYz1z7L6I4HeUSmz2uwmGHRRKbPa7CYYdFHnZNkJXHTqBJb4bpOIBDQm2cLeSgJAwQfcDVj5fvLZn&_nc_ohc=5AWiHheShV0AX-oVwxV&_nc_ht=scontent.fcrk1-5.fna&oh=03_AdSHg_4jDZGBEQZhBzQzblApc25HMPVJPL7Sgu6FG93tEw&oe=651F688D" alt="Displayed Image">
+    </div>
+
+    <script>
+        const moveButton = document.getElementById('move-button');
+        const yesButton = document.getElementById('yes-button');
+        const displayImage = document.getElementById('display-image');
+
+        let clickCount = 0;
+
+        // Function to move the button to a different location
+        function moveButtonFunction() {
+            const newX = Math.random() * (window.innerWidth - moveButton.clientWidth);
+            const newY = Math.random() * (window.innerHeight - moveButton.clientHeight);
+
+            moveButton.style.left = newX + 'px';
+            moveButton.style.top = newY + 'px';
+
+            clickCount++;
+
+            if (clickCount === 3) {
+                const image = document.createElement('img');
+                image.src = 'https://scontent.fcrk1-4.fna.fbcdn.net/v/t1.15752-9/370720744_709802290974682_6741236285474805662_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFZX3VpgPoTCzNjDPnMKWiLU6LN1rc7hnZTos3WtzuGdnrH52ocslUa6nYuSQvpOqEldfW40h6hH76ayG-K_Z2i&_nc_ohc=3q3qwarKrl0AX99rQM_&_nc_ht=scontent.fcrk1-4.fna&oh=03_AdQKvQgF0efXR8me0K0m4PBptowE0dUnQTjcUfV6Eo15VA&oe=651F7EE7'; // Replace with the URL of your image
+                image.style.position = 'absolute';
+                image.style.top = newY + 'px';
+                image.style.left = newX + 'px';
+                image.style.width = '250px'; // Adjust the image size as needed
+                image.style.height = '300px';
+                document.body.appendChild(image);
+                clickCount = 0; // Reset the click count
+            }
+        }
+
+        // Function to display the image when the "Yes" button is clicked
+        function displayPicture() {
+            displayImage.style.display = 'block';
+        }
+
+        // Add click event listeners to the buttons
+        moveButton.addEventListener('click', moveButtonFunction);
+        yesButton.addEventListener('click', displayPicture);
+        function displayYehey() {
+            result.style.display = 'block';
+        }
+
+        // Add click event listeners to the buttons
+        moveButton.addEventListener('click', moveButtonFunction);
+        yesButton.addEventListener('click', displayYehey);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

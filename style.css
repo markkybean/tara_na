@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+#move-button{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    margin-left: 5%;
+    transform: translate(-50%, -50%);
+}
+#yes-button{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+}
+
+#display-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#display-image {
+    display: none;
+    width: 350px;
+    height: 200px;
+    margin-left: 40%;
+    margin-top: 5px;
+    height: auto;
+}
+.container-fluid{
+    height: 10vh;
+
+    /* center the content vertically using flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
